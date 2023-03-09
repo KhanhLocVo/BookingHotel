@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
 import {getAuth, updateProfile} from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { updateDoc, doc } from 'firebase/firestore';
 import { db } from '../firebase';
+import { AiOutlineHome } from 'react-icons/ai';
 
 
 export default function Profile() {
@@ -82,6 +83,13 @@ export default function Profile() {
             </div>
 
           </form>
+          <button type="submit" className="w-full bg-lime-300 text-red-500 uppercase px-7 py-3 text-sm font-medium rounded shadow-sm hover:bg-blue-300 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-300">
+            <Link to="/create-listing" className="flex justify-center items-center">
+              <AiOutlineHome className="mr-2 text-3xl bg-red-300 rounded-full p-1 border-2 " />
+              Sell or rent your home
+            </Link>
+            
+          </button>
         </div>
       </section>
     </div>
