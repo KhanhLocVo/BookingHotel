@@ -3,5 +3,23 @@
 @tailwind utilities;
 
 body {
-    background-color: rgb(221, 174, 176);
+    background-color: rgb(167, 215, 226);
 }
+
+.logo {
+    width: 150px;
+    height: 60px;
+    
+}
+
+.bg {
+    
+    background: url(../public/images/bg-1.jpeg) no-repeat center center fixed;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 0%;
+}
+
