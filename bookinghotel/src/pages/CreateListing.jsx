@@ -157,6 +157,7 @@ export default function CreateListing() {
         // * geocoding API
         // geolocation, 
         timestamp: serverTimestamp(),
+        userRef: auth.currentUser.uid,
 
       };
       delete formDataCopy.images;
