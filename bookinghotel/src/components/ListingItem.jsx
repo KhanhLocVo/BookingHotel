@@ -1,10 +1,15 @@
 // import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Moment from 'react-moment';
 import {GoLocation} from 'react-icons/go';
+import {FaTrash} from 'react-icons/fa';
+import {FiEdit} from 'react-icons/fi';
 
-export default function ListingItem({listing, id}) {
-  return <li className="relative bg-white flex flex-col justify-between items-center shadow-md hover:shadow-xl rounded-md overflow-hidden transition-shadow duration-150 m-[10px]">
+
+export default function ListingItem({listing, id, onDelete, onEdit}) {
+    const navigate = useNavigate();
+  return (
+  <li className="relative bg-white flex flex-col justify-between items-center shadow-md hover:shadow-xl rounded-md overflow-hidden transition-shadow duration-150 m-[10px]">
     <Link className="contents" to={`/category/${listing.type}/${id}`}>
         <img className="h-[200px] w-full object-cover hover:scale-105 transit-scale duration-200 ease-in" 
          loading="lazy"
@@ -36,8 +41,22 @@ export default function ListingItem({listing, id}) {
             </div>
         </div>
     </Link>
+    {onDelete && (
+        <FaTrash className="absolute bottom-2 right-2 h-[20px] cursor-pointer text-red-500" 
+            onClick={()=>onDelete(listing.id)}
+        />
+        
+    )}
+
+    {onEdit && (
+        <FiEdit className="absolute bottom-2 right-8 h-5 cursor-pointer" 
+            onClick={()=>onEdit(listing.id)}
+        />
+        
+    )}
     
-  </li>;
+  </li>
+  );
     
   
 }
