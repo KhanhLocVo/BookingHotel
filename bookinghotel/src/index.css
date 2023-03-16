@@ -8,12 +8,10 @@ body {
 
 .logo {
     width: 150px;
-    height: 60px;
-    
+    height: 60px; 
 }
 
-.bg {
-    
+.bg {   
     background: url(../public/images/bg-1.jpeg) no-repeat center center fixed;
     background-position: center;
     -webkit-background-size: cover;
@@ -23,3 +21,11 @@ body {
     padding-top: 0%;
 }
 
+.swiper-button-next::after,
+.swiper-button-next::after{
+    color: #a8dadc
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background: #a8dadc !important ;
+}
