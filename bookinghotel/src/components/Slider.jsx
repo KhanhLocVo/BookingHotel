@@ -50,11 +50,13 @@ export default function Slider() {
             >
                 {listings.map(({data, id}) => (
                     <SwiperSlide key={id} onClick={()=>navigate(`/category/${data.type}/${id}`)}>
-                        <div style={{
-                                background: `url(${data.imgUrls[0]}) center, no-repeat`,
-                                backgroundSize: "cover",
-                            }}
+                        <div 
                             className="relative w-full h-[300px] overflow-hidden "
+                            style={{
+                                background: `url(${data.imgUrls[0]}) center, no-repeat`,
+                                backgroundSize: "Cover",
+                            }}
+                            
                         >
                             <p className="text-[#f1faee] absolute left-1 top-3 font-medium max-w-[90%] bg-[#457b9d] shadow-lg opacity-90 p-2 rounded-br-3xl">
                                 {data.name}
